@@ -1,0 +1,97 @@
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    font-family: var(--font);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--border);
+    height: 50px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+    font-size: var(--text-font-size);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* on hover adds a green background and invert the colors of the image and makes it a bit bigger */
+.navbar #logout_icon:hover {
+    filter: invert(50%);
+    height: 35px;
+    width: 35px;
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+
+/* Dropdown button */
+.dropdown .schedule-button {
+    font-size: var(--text-font-size);
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    padding: 10px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* at hover adds a green background, makes the text bigger and changes its color to grey */
+.navbar a:hover, .dropdown:hover .schedule-button {
+    background-color: var(--primary-color);
+    color: var(--navbar-accent-color);
+    font-size: 150%;
+}
+
+/* Dropdown content (hidden by default) */
+.schedule-dropdown {
+    background-color: white;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.schedule-dropdown a {
+    float: none;
+    color: #0a642d;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* at hover adds a green background, makes the text bigger and changes its color to grey  */
+.schedule-dropdown a:hover {
+    background-color: var(--primary-color);
+    color: var(--navbar-accent-color);
+    font-size: 150%;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .schedule-dropdown {
+    display: block;
+}
+/* setting size and location for gasoline logo */
+#gasoline_logo {
+    margin-top: 10px;
+    height: 24px;
+}
+
+/* setting the size and location for the logout icon */
+#logout_icon {
+    height: 30px;
+    width: 30px;
+    margin-top: -5px;
+    margin-right: 10px;
+}

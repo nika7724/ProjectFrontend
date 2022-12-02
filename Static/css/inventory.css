@@ -1,0 +1,63 @@
+.inventory-table {
+    margin: auto;
+    width: auto;
+}
+
+#inventory-header {
+    text-align: center;
+    font-size: 70px;
+    color: var(--primary-color);
+    padding-bottom: 30px;
+}
+
+th {
+    background-color: var(--primary-color);
+    height: 30px;
+    border: white solid 1px;
+    font-size: var(--text-font-size);
+    color: white;
+    text-align: center;
+}
+
+td {
+    border: var(--border);
+    color: var(--primary-color);
+    font-size: 20px;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+}
+
+#create-button {
+    float: right;
+    position: relative; top: 2px; left: -185px;
+    border: var(--border);
+    color: var(--primary-color);
+    background-color: white;
+    font-size: 20px;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+}
+
+#create-button:hover {
+    background-color: var(--primary-color);
+    color: var(--navbar-accent-color);
+}
+
+.inventory-table button {
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: var(--primary-color);
+    border: white solid 1px;
+    height: 23px;
+    color: white;
+    font-size:15px;
+    text-align: center;
+}
+
+.inventory-table button:hover {
+    color: var(--navbar-accent-color);
+}
+
+

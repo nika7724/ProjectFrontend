@@ -1,0 +1,36 @@
+#create-inventory-header {
+    text-align: center;
+    font-size: 70px;
+    color: var(--primary-color);
+    padding-bottom: 30px;
+}
+
+.inventory-details {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    height: 400px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+input {
+    width: 200px;
+    height: 20px;
+    border: none;
+}
+
+label{
+    display: block;
+    width: 100px;
+    height: 20px;
+    padding: 0.3em;
+
+}

@@ -1,0 +1,11 @@
+:root{
+    --primary-color: #0a642d;
+    --navbar-accent-color: #797b7a;
+    --border: #0a642d solid 2px;
+    --font: "heavy hill";
+    --text-font-size: 20px;
+    --number-font-size: 40px;
+    --frame-width: 1500px;
+    --frame-height: 800px;
+    --header-font-size: 70px;
+}
