@@ -5,32 +5,57 @@
     padding-bottom: 30px;
 }
 
-.inventory-details {
+.create-inventory-form {
     background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 60%;
+    height: 320px;
     margin: auto;
-    width: 50%;
-    height: 400px;
 }
 
-h3 {
+::placeholder {
+    color: var(--primary-color);
+}
+
+
+input, select{
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    color:var(--primary-color);
+}
+
+label {
+    font-size:var(--text-font-size) ;
     color: white;
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.top-area,.bottom-area, .two-button {
+    display: flex;
+    padding-top: 5px;
+}
+
+.product-id-segment, .product-type-segment, .product-name-segment, .product-quantity-segment,.save-button, .cancel-button {
+    flex-direction: column;
+    display: block;
+    width: 100%;
+}
+
+.save-button,.cancel-button {
+    margin-top: 40px;
     text-align: center;
 }
 
-input {
-    width: 200px;
-    height: 20px;
-    border: none;
+.save-button:hover {
+    background-color: var(--primary-color);
+    color: var(--navbar-accent-color);
 }
 
-label{
-    display: block;
-    width: 100px;
-    height: 20px;
-    padding: 0.3em;
 
-}
+
+
+

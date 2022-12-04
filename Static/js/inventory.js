@@ -4,8 +4,21 @@ const inventoryApi ='http://localhost:8080/inventory';
 //Table itself retrieved from the HTML document
 const inventoryTable = document.getElementById('inventory-table-body')
 
+const filteringType = document.getElementById('type-drop-down')
+
 //Empty array to be filled with the Jason inventory objects
 let inventoryArray;
+
+//creates a table taking data from inventoryArray
+async function createTable(inventory) {
+    if (filteringType.value === "All") {
+        createRow(inventory)
+    }
+    else if(inventory.itemDescription === filteringType.value)
+    {
+        createRow(inventory)
+    }
+}
 
 //create table(row by row) using data from items
 function createRow(inventory) {
@@ -61,16 +74,29 @@ function createRow(inventory) {
     });
 
 }
-//creates a table taking data from inventoryArray
-async function createTable(inventory) {
-    /*if (tableOption.value === "All") {
-        createRow(inventory)
-    } else if (inventory.category === tableOption.value){
-        createRow(inventory)
 
-    }*/
-    createRow(inventory)
+function showByType() {
+    var value = filteringType.options[filteringType.selectedIndex].value;
+    console.log(value);
+    let typeValue = "?itemDescription.description" + value;
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: inventoryApi + typeValue,
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            console.log(data);
+            // clear();
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
 }
+
+
 
 //update the quantity.
 async function updateInventory(inventory, newQuantity) {
@@ -123,9 +149,11 @@ async function doFetchInventory() {
     //clear()
     inventoryArray = await fetchInventory(inventoryApi)
     inventoryArray.forEach(createTable)
-    console.log(inventoryArray)
 
-    /*document.getElementById("create-button").onclick =function () {
+    document.getElementById("create-button").onclick =function () {
         location.href='create-inventory.html';
-    }*/
+    }
+
+    filteringType.addEventListener('change', doFetchInventory)
+
 }

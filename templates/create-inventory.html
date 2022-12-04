@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="/static/css/global.css">
     <link rel="stylesheet" href="/static/css/navbar.css">
     <link rel="stylesheet" href="/static/css/create-inventory.css">
-
+    <title>Create Inventory</title>
 </head>
+
 <body>
 <!--Navbar-->
 <div class="navbar">
@@ -43,26 +44,36 @@
 
 <h1 id="create-inventory-header">Create Inventory</h1>
 
-<div class="inventory-details">
-    <form action ="/createInventory" method="post">
-
-        <div class ="name" style="display: flex">
-            <label for="product-name"><h3>Name</h3></label>
-            <input type="text" id="product-name" name="product-name">
-        </div>
-
-        <div class="type" style="display: flex">
-            <label for="product-type"><h3>Type</h3></label>
-            <input type="text" id="product-type" name="product-type">
-        </div>
-
-        <div class ="quantity" style="display: flex">
-            <label for="product-quantity"><h3>Quantity</h3></label>
-            <input type="text" id="product-quantity" name="product-quantity">
-        </div>
-
+<div class="container">
+</div>
+<div class="create-inventory-form">
+    <form action="" method="post" class="create-inventory-form" id="inventory-form">
+        <div class="top-area">
+        <div class ="product-id-segment" style="display: flex">
+        <label for="product-id">Id</label>
+            <input type="number" id="product-id" class="product-id" readonly placeholder="Id" autocomplete="on"></div>
+        <div class ="product-name-segment" style="display: flex">
+        <label for="product-name">Name</label>
+            <input type="text" id="product-name" class="product-name" placeholder="Name" autocomplete="off"></div></div>
+        <div class="bottom-area">
+        <div class ="product-type-segment" style="display: flex">
+        <label for="product-name">Type</label>
+            <select name="type" id="product-type" ></select></div>
+        <div class ="product-quantity-segment" style="display: flex">
+            <label for="product-quantity">Quantity</label>
+            <input type="number" id="product-quantity" class="product-quantity" placeholder="Quantity" autocomplete="off"></div></div>
+        <div class="two-button">
+        <div class ="save-button" style="display: flex">
+            <input type="submit" value="Save" id="save-button"></div>
+        <div class ="cancel-button" style="display: flex">
+            <input type="submit" value="Cancel" id="cancel-button"></div></div>
     </form>
 </div>
 
+<script src="../static/js/create-inventory.js"></script>
+
 </body>
 </html>
+
+
+
