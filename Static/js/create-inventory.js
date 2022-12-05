@@ -1,11 +1,10 @@
 //Rest API to connect to back-end
-const inventoryApi ='http://localhost:8080/inventory';
+const urlApi ='http://localhost:8080';
 const saveInventory = document.getElementById('save-button')
 const cancelInventory = document.getElementById('cancel-button')
 const name = document.getElementById('product-name')
 const type = document.getElementById('product-type')
 const quantity = document.getElementById('product-quantity')
-
 
 let newInventory =  {
     "productName": name.value,
@@ -14,7 +13,8 @@ let newInventory =  {
 
 let descriptionId
 
-getAll("itemDescription").then(data => {
+//dropdown list fetch data from the itemDescription table
+getAll("itemDescriptions").then(data => {
     console.log(data)
     data.forEach(itemDescription => {
         const option = document.createElement("option")
@@ -40,38 +40,19 @@ saveInventory.addEventListener('click', () =>{
     descriptionId = type.value
     newInventory.productName = name.value
     newInventory.productQuantity = quantity.value
-    create(newInventory, "inventory").then(() =>
-        createWithParam(newInventory, "inventory", ["id", descriptionId]).then(() => window.location.href = "inventory.html")
-    )
+    createWithParam(newInventory, "inventory", ["itemDescriptionId", descriptionId]).then(() => window.location.href = "inventory.html")
 })
 
 
 async function getAll(resource) {
-    return  fetch( inventoryApi+ '/')
+    return  fetch( urlApi+ '/' + resource)
         .then(response => response.json())
 }
 
-async function create(body,resource){
-    return fetch(inventoryApi +'/', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    })
-        .then(response => {
-            if(response.status===200){
-                return  response.json()
-            }
-            return response.status
-        })
-        .catch(err => console.log(err))
-
-}
 
 async function createWithParam(body,resource,[parameterName, parameterValue]){
-    console.log(inventoryApi +'/' + "?" + parameterName + "=" + parameterValue)
-    return fetch(inventoryApi + '/'+ "?" + parameterName + "=" + parameterValue, {
+    console.log(urlApi +'/' + resource + "?" + parameterName + "=" + parameterValue)
+    return fetch(urlApi + '/'+ resource+ "?" + parameterName + "=" + parameterValue, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
