@@ -7,8 +7,8 @@
 
 .create-inventory-form {
     background-color: var(--primary-color);
-    width: 60%;
-    height: 320px;
+    width: 50%;
+    height: 470px;
     margin: auto;
 }
 
@@ -16,8 +16,11 @@
     color: var(--primary-color);
 }
 
-.save-button,.cancel-button {
-    width: 100px;
+.save-button, .cancel-button {
+    padding-left: 10px;
+    flex-direction: row;
+    display: flex;
+    width: 80px;
     height: 40px;
     margin-top: 40px;
     text-align: center;
@@ -42,19 +45,24 @@ label {
     display: block;
     width: 200px;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
-.top-area,.bottom-area, .two-button {
-    display: flex;
+.top-area,.bottom-area {
     padding-top: 5px;
 }
 
-.product-id-segment, .product-type-segment, .product-name-segment, .product-quantity-segment,.save-button, .cancel-button {
+.two-button {
+    display: flex;
+}
+
+.product-segment{
     flex-direction: column;
     display: block;
     width: 100%;
 }
+
+
 
 
 

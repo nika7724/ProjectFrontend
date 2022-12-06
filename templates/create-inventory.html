@@ -21,7 +21,7 @@
 <div class="navbar">
     <img id="gasoline_logo" src="/static/images/gasoline-logo.png" alt="gasoline grill logo">
     <div>
-        <a href="#home">Home</a>
+        <a href="main.html">Home</a>
         <a href="#burger prediction">burger prediction</a>
         <!--Dropdown menu in the navbar-->
         <div class="dropdown">
@@ -35,7 +35,7 @@
                 <a href="#schedule-wishes">Schedule Wishes</a>
             </div>
         </div>
-        <a href="#inventory">Inventory</a>
+        <a href="inventory.html">Inventory</a>
         <a href="#checklist">Checklist</a>
         <a href="#login">
             <img id="logout_icon" src="/static/images/logout.png" alt="logout icon"> </a>
@@ -48,25 +48,31 @@
 </div>
 <div class="create-inventory-form">
     <form action="" method="post" class="create-inventory-form" id="inventory-form">
+
         <div class="top-area">
-        <div class ="product-id-segment" style="display: flex">
-        <label for="product-id">Id</label>
-            <input type="number" id="product-id" class="product-id" readonly placeholder="Id" autocomplete="on"></div>
-        <div class ="product-name-segment" style="display: flex">
-        <label for="product-name">Name</label>
-            <input type="text" id="product-name" class="product-name" placeholder="Name" autocomplete="off"></div></div>
+            <!--<div class ="product-segment">
+                <label for="product-id">Id</label>
+                <input type="number" id="product-id" class="product-id" readonly placeholder="Id" autocomplete="on"></div>-->
+
+            <div class ="product-segment">
+                <label for="product-name">Name</label>
+                <input type="text" id="product-name" class="product-name" placeholder="Name" autocomplete="off"></div></div>
+
         <div class="bottom-area">
-        <div class ="product-type-segment" style="display: flex">
-        <label for="product-type">Type</label>
-            <select name="type" id="product-type" ></select></div>
-        <div class ="product-quantity-segment" style="display: flex">
-            <label for="product-quantity">Quantity</label>
-            <input type="number" id="product-quantity" class="product-quantity" placeholder="Quantity" autocomplete="off"></div></div>
+            <div class ="product-segment">
+                <label for="product-type">Type</label>
+                <select name="type" id="product-type" ></select></div>
+
+            <div class ="product-segment">
+                <label for="product-quantity">Quantity</label>
+                <input type="number" id="product-quantity" class="product-quantity" placeholder="Quantity" autocomplete="off"></div></div>
+
         <div class="two-button">
-        <div class ="save-button" style="display: flex">
-            <input type="submit" value="Save" id="save-button"></div>
-        <div class ="cancel-button" style="display: flex">
-            <input type="submit" value="Cancel" id="cancel-button"></div></div>
+            <div class ="save-button">
+                <input type="submit" value="Save" id="save-button"></div>
+
+            <div class ="cancel-button">
+                <input type="submit" value="Cancel" id="cancel-button"></div></div>
     </form>
 </div>
 

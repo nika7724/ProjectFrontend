@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
 
+    <meta charset="UTF-8">
+    <title>Inventory</title>
     <script
             src="https://code.jquery.com/jquery-3.6.1.js"
             integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -20,7 +21,7 @@
 <div class="navbar">
     <img id="gasoline_logo" src="/static/images/gasoline-logo.png" alt="gasoline grill logo">
     <div>
-        <a href="#home">Home</a>
+        <a href="main.html">Home</a>
         <a href="#burger prediction">burger prediction</a>
         <!--Dropdown menu in the navbar-->
         <div class="dropdown">
@@ -34,7 +35,7 @@
                 <a href="#schedule-wishes">Schedule Wishes</a>
             </div>
         </div>
-        <a href="#inventory">Inventory</a>
+        <a href="inventory.html">Inventory</a>
         <a href="#checklist">Checklist</a>
         <a href="#login">
             <img id="logout_icon" src="/static/images/logout.png" alt="logout icon"> </a>
@@ -43,16 +44,10 @@
 
 <h1 id="inventory-header">Inventory</h1>
 
-
-<select name="type-drop-down" id="type-drop-down" autocomplete="off" onChange="showByType()">
-    <option value="All" selected>All</option>
-    <option value="vegetable" >Vegetable</option>
-    <option value="fruits">Fruits</option>
-    <option value="daily">Daily</option>
+<select name="type-drop-down" id="type-drop-down">
 </select>
-<div>
+
 <button id="create-button">Create</button>
-</div>
 <table class=inventory-table id="inventory-table">
     <thead>
     <tr>
@@ -64,9 +59,8 @@
     </tr>
     </thead>
     <tbody id="inventory-table-body"></tbody>
+
 </table>
-
-
 
 <script src="../static/js/inventory.js"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
