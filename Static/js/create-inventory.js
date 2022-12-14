@@ -10,7 +10,6 @@ let newInventory =  {
     "productName": name.value,
     "productQuantity": quantity.value
 }
-
 let descriptionId
 
 //dropdown list fetch data from the itemDescription table
@@ -35,7 +34,7 @@ getAll("itemDescriptions").then(data => {
     }
 })
 
-
+//save new inventory
 saveInventory.addEventListener('click', () =>{
     descriptionId = type.value
     newInventory.productName = name.value
@@ -49,10 +48,9 @@ async function getAll(resource) {
         .then(response => response.json())
 }
 
-
 async function createWithParam(body,resource,[parameterName, parameterValue]){
     console.log(urlApi +'/' + resource + "?" + parameterName + "=" + parameterValue)
-    return fetch(urlApi + '/'+ resource+ "?" + parameterName + "=" + parameterValue, {
+    return fetch(urlApi + '/'+ resource + "?" + parameterName + "=" + parameterValue, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -66,3 +64,8 @@ async function createWithParam(body,resource,[parameterName, parameterValue]){
         })
         .catch(err => console.log(err))
 }
+
+//cancel inventory button and go back to the booking page
+cancelInventory.addEventListener("click", ()=> {
+    window.location.href = "inventory.html";
+})

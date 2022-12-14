@@ -16,51 +16,55 @@
 </head>
 
 <body onload="doFetchInventory();">
+<div id="container">
 
-<!--Navbar-->
-<div class="navbar">
-    <img id="gasoline_logo" src="/static/images/gasoline-logo.png" alt="gasoline grill logo">
-    <div>
-        <a href="main.html">Home</a>
-        <a href="#burger prediction">burger prediction</a>
-        <!--Dropdown menu in the navbar-->
-        <div class="dropdown">
-            <!--What will be displayed in the navbar-->
-            <button class="schedule-button">schedule
-                <i></i>
-            </button>
-            <!--Dropdown menu choices that shows up when you hover the schedule button-->
-            <div class="schedule-dropdown">
-                <a href="#weekly-schedule">Weekly schedule</a>
-                <a href="#schedule-wishes">Schedule Wishes</a>
+    <!--Navbar-->
+    <div class="navbar">
+        <img id="gasoline_logo" src="/static/images/gasoline-logo.png" alt="gasoline grill logo">
+        <div>
+            <a href="main.html">Home</a>
+            <a href="#burger prediction">burger prediction</a>
+            <!--Dropdown menu in the navbar-->
+            <div class="dropdown">
+                <!--What will be displayed in the navbar-->
+                <button class="schedule-button">schedule
+                    <i></i>
+                </button>
+                <!--Dropdown menu choices that shows up when you hover the schedule button-->
+                <div class="schedule-dropdown">
+                    <a href="#weekly-schedule">Weekly schedule</a>
+                    <a href="#schedule-wishes">Schedule Wishes</a>
+                </div>
             </div>
+            <a href="inventory.html">Inventory</a>
+            <a href="#checklist">Checklist</a>
+            <a href="#login">
+                <img id="logout_icon" src="/static/images/logout.png" alt="logout icon"> </a>
         </div>
-        <a href="inventory.html">Inventory</a>
-        <a href="#checklist">Checklist</a>
-        <a href="#login">
-            <img id="logout_icon" src="/static/images/logout.png" alt="logout icon"> </a>
     </div>
+
+    <h1 id="inventory-header">Inventory</h1>
+
+    <select class="type-drop-down" id="type-drop-down" onchange="filterOption()"><option>--Choose Type--</option>
+    </select>
+
+    <button class= show-all-type-button id="show-all-type-button">Show All</button>
+
+    <button id="create-button">Create</button>
+    <table class=inventory-table id="inventory-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>To Order</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="inventory-table-body"></tbody>
+
+    </table>
 </div>
-
-<h1 id="inventory-header">Inventory</h1>
-
-<select name="type-drop-down" id="type-drop-down" onchange="filterOption()"><option>--Choose Type--</option>
-</select>
-
-<button id="create-button">Create</button>
-<table class=inventory-table id="inventory-table">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Quantity</th>
-        <th>To Order</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody id="inventory-table-body"></tbody>
-
-</table>
 
 <script src="../static/js/inventory.js"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

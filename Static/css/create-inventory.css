@@ -1,14 +1,15 @@
+
 #create-inventory-header {
     text-align: center;
-    font-size: 70px;
+    font-size: var(--number-font-size);
     color: var(--primary-color);
-    padding-bottom: 30px;
+    padding: 50px;
 }
 
 .create-inventory-form {
     background-color: var(--primary-color);
-    width: 50%;
-    height: 470px;
+    width: 600px;
+    height: 480px;
     margin: auto;
 }
 
@@ -16,19 +17,28 @@
     color: var(--primary-color);
 }
 
-.save-button, .cancel-button {
-    padding-left: 10px;
-    flex-direction: row;
-    display: flex;
-    width: 80px;
-    height: 40px;
-    margin-top: 40px;
-    text-align: center;
+#save-button, #cancel-button {
+    display:inline-block;
+    width: 80px !important;
+    height: 40px !important;
+    margin-top: 42px !important;
+    text-align: center !important;
+    margin-left: 10px !important;
 }
 
-.save-button:hover {
-    background-color: var(--primary-color);
+#save-button:hover {
     color: var(--navbar-accent-color);
+}
+
+#cancel-button:hover {
+    color: var(--navbar-accent-color);
+}
+
+.two-button {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input, select{
@@ -37,6 +47,7 @@ input, select{
     border: none;
     background-color: white;
     color:var(--primary-color);
+    margin-left: 200px;
 }
 
 label {
@@ -46,15 +57,14 @@ label {
     width: 200px;
     height: 40px;
     margin-top: 30px;
+    margin-left: 200px;
 }
 
 .top-area,.bottom-area {
     padding-top: 5px;
 }
 
-.two-button {
-    display: flex;
-}
+
 
 .product-segment{
     flex-direction: column;
